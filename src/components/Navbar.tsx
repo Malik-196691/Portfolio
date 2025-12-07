@@ -61,7 +61,7 @@ const Navbar = () => {
             scrollToSection("#home");
           }}
         >
-          {"<Dev />"}
+          {"<AbMalik />"}
         </motion.a>
 
         {/* Desktop Navigation */}
