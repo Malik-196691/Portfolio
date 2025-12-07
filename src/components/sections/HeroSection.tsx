@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import MagneticButton from "../MagneticButton";
+import HeroBackground from "../HeroBackground";
 
 const HeroSection = () => {
   const scrollToProjects = () => {
@@ -16,6 +17,7 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
+      <HeroBackground />
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
