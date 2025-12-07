@@ -23,22 +23,22 @@ const skillCategories = [
     ],
   },
   {
-    title: "Tools & Others",
+    title: "AI Integration",
     skills: [
-      { name: "Git", level: 92 },
-      { name: "Docker", level: 78 },
-      { name: "AWS", level: 75 },
-      { name: "Figma", level: 80 },
-      { name: "CI/CD", level: 82 },
+      { name: "OpenAI API", level: 88 },
+      { name: "LangChain", level: 82 },
+      { name: "RAG Systems", level: 78 },
+      { name: "Prompt Engineering", level: 90 },
+      { name: "AI Agents", level: 75 },
     ],
   },
 ];
 
 const technologies = [
   "React", "Next.js", "TypeScript", "Node.js", "Python", 
+  "OpenAI", "LangChain", "GPT-4", "Gemini", "Claude",
   "PostgreSQL", "MongoDB", "Redis", "GraphQL", "REST",
-  "Docker", "AWS", "Vercel", "Git", "Figma",
-  "Tailwind", "SCSS", "Jest", "Cypress", "Linux"
+  "Docker", "AWS", "Vercel", "Git", "Tailwind"
 ];
 
 const SkillsSection = () => {
