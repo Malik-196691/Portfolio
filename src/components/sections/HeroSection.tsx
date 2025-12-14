@@ -36,15 +36,66 @@ const HeroSection = () => {
 
           {/* Main headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
           >
-            Building{" "}
-            <span className="gradient-text">Digital Experiences</span>
+            <motion.span className="inline-block overflow-hidden">
+              {"Building".split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.3 + index * 0.05,
+                    ease: [0.33, 1, 0.68, 1],
+                  }}
+                  className="inline-block"
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </motion.span>{" "}
+            <motion.span
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
+              className="gradient-text inline-block"
+            >
+              <motion.span
+                animate={{
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+                className="inline-block bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto] bg-clip-text text-transparent"
+              >
+                Digital Experiences
+              </motion.span>
+            </motion.span>
             <br />
-            That Make an Impact
+            <motion.span className="inline-block overflow-hidden">
+              {"That Make an Impact".split(" ").map((word, wordIndex) => (
+                <motion.span
+                  key={wordIndex}
+                  initial={{ y: 80, opacity: 0, rotateX: -90 }}
+                  animate={{ y: 0, opacity: 1, rotateX: 0 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 1 + wordIndex * 0.15,
+                    ease: [0.33, 1, 0.68, 1],
+                  }}
+                  className="inline-block mr-[0.25em]"
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </motion.span>
           </motion.h1>
 
           {/* Subtitle */}
