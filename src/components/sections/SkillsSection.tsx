@@ -7,19 +7,37 @@ const skillCategories = [
     title: "Frontend",
     icon: Code2,
     color: "from-blue-500 to-cyan-400",
-    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion"],
+    skills: [
+      { name: "React", level: 95 },
+      { name: "TypeScript", level: 90 },
+      { name: "Next.js", level: 88 },
+      { name: "Tailwind CSS", level: 92 },
+      { name: "Framer Motion", level: 85 },
+    ],
   },
   {
     title: "Backend",
     icon: Server,
     color: "from-emerald-500 to-teal-400",
-    skills: ["Node.js", "Python", "PostgreSQL", "GraphQL", "REST APIs"],
+    skills: [
+      { name: "Node.js", level: 88 },
+      { name: "Python", level: 80 },
+      { name: "PostgreSQL", level: 85 },
+      { name: "GraphQL", level: 82 },
+      { name: "REST APIs", level: 90 },
+    ],
   },
   {
     title: "AI Integration",
     icon: Brain,
     color: "from-purple-500 to-pink-400",
-    skills: ["OpenAI API", "LangChain", "RAG Systems", "Prompt Engineering", "AI Agents"],
+    skills: [
+      { name: "OpenAI API", level: 88 },
+      { name: "LangChain", level: 82 },
+      { name: "RAG Systems", level: 78 },
+      { name: "Prompt Engineering", level: 90 },
+      { name: "AI Agents", level: 75 },
+    ],
   },
 ];
 
@@ -111,24 +129,43 @@ const SkillsSection = () => {
                 {/* Title */}
                 <h3 className="text-2xl font-bold mb-6">{category.title}</h3>
 
-                {/* Skills list with stagger animation */}
-                <div className="space-y-3">
+                {/* Skills list with progress bars */}
+                <div className="space-y-4">
                   {category.skills.map((skill, index) => (
                     <motion.div
-                      key={skill}
+                      key={skill.name}
                       initial={{ opacity: 0, x: -20 }}
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 0.4, delay: 0.3 + catIndex * 0.1 + index * 0.08 }}
-                      className="flex items-center gap-3 group/skill"
+                      className="group/skill"
                     >
-                      <motion.div
-                        animate={activeCategory === category.title ? { scale: [1, 1.2, 1] } : {}}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className={`w-2 h-2 rounded-full bg-gradient-to-r ${category.color}`}
-                      />
-                      <span className="text-muted-foreground group-hover/skill:text-foreground transition-colors duration-300">
-                        {skill}
-                      </span>
+                      <div className="flex justify-between mb-2">
+                        <span className="text-sm font-medium text-muted-foreground group-hover/skill:text-foreground transition-colors duration-300">
+                          {skill.name}
+                        </span>
+                        <motion.span
+                          initial={{ opacity: 0 }}
+                          animate={isInView ? { opacity: 1 } : {}}
+                          transition={{ duration: 0.4, delay: 0.6 + catIndex * 0.1 + index * 0.08 }}
+                          className="text-xs font-mono text-muted-foreground"
+                        >
+                          {skill.level}%
+                        </motion.span>
+                      </div>
+                      <div className="h-2 bg-secondary/50 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={isInView ? { width: `${skill.level}%` } : {}}
+                          transition={{ duration: 1, delay: 0.5 + catIndex * 0.15 + index * 0.1, ease: "easeOut" }}
+                          className={`h-full rounded-full bg-gradient-to-r ${category.color} relative`}
+                        >
+                          <motion.div
+                            animate={{ x: ["0%", "100%", "0%"] }}
+                            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 }}
+                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                          />
+                        </motion.div>
+                      </div>
                     </motion.div>
                   ))}
                 </div>
