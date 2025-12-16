@@ -63,7 +63,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6"
+            className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-snug sm:leading-tight mb-6 px-2 sm:px-0"
           >
             <span className="block sm:inline">
               <TypewriterText text="Building " delay={0.3} />
@@ -75,12 +75,6 @@ const HeroSection = () => {
             <span className="block mt-2 sm:mt-0 sm:inline">
               <TypewriterText text="That Make an Impact" delay={1.8} />
             </span>
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.1, delay: 3.2, repeat: Infinity, repeatType: "reverse", repeatDelay: 0.5 }}
-              className="inline-block w-[3px] h-[0.9em] bg-primary ml-1 align-middle"
-            />
           </motion.h1>
 
           {/* Subtitle */}
