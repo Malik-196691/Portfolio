@@ -63,14 +63,18 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6"
           >
-            <TypewriterText text="Building " delay={0.3} />
-            <span className="gradient-text">
+            <span className="block sm:inline">
+              <TypewriterText text="Building " delay={0.3} />
+            </span>
+            <span className="gradient-text whitespace-nowrap">
               <TypewriterText text="Digital Experiences" delay={0.8} />
             </span>
-            <br />
-            <TypewriterText text="That Make an Impact" delay={1.8} />
+            <br className="hidden sm:block" />
+            <span className="block mt-2 sm:mt-0 sm:inline">
+              <TypewriterText text="That Make an Impact" delay={1.8} />
+            </span>
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
