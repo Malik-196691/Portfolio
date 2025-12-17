@@ -9,7 +9,7 @@ const testimonials = [
     name: "Sarah Johnson",
     role: "CEO, TechStart",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
-    content: "Working with Alex was an absolute pleasure. The attention to detail and technical expertise exceeded our expectations. Our new platform has significantly improved user engagement.",
+    content: "Working with Ab Malik was an absolute pleasure. The attention to detail and technical expertise exceeded our expectations. Our new platform has significantly improved user engagement.",
     rating: 5,
   },
   {
@@ -25,7 +25,7 @@ const testimonials = [
     name: "Emily Rodriguez",
     role: "Product Manager, DigitalFlow",
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-    content: "Alex's ability to translate complex requirements into elegant solutions is remarkable. The code quality and documentation were top-notch.",
+    content: "Ab Malik's ability to translate complex requirements into elegant solutions is remarkable. The code quality and documentation were top-notch.",
     rating: 5,
   },
   {
@@ -33,7 +33,7 @@ const testimonials = [
     name: "David Kim",
     role: "Founder, AppVenture",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-    content: "A rare combination of creativity and technical skill. Alex not only built what we asked for but also suggested improvements that made our product even better.",
+    content: "A rare combination of creativity and technical skill. Ab Malik not only built what we asked for but also suggested improvements that made our product even better.",
     rating: 5,
   },
 ];

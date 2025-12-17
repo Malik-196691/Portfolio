@@ -6,19 +6,22 @@ const services = [
   {
     icon: Code2,
     title: "Web Development",
-    description: "Building responsive, performant web applications with modern frameworks",
+    description:
+      "Building responsive, performant web applications with modern frameworks",
     gradient: "from-blue-500 to-cyan-400",
   },
   {
     icon: Brain,
     title: "AI Integration",
-    description: "Implementing intelligent features using OpenAI, LangChain & custom AI solutions",
+    description:
+      "Implementing intelligent features using OpenAI, LangChain & custom AI solutions",
     gradient: "from-purple-500 to-pink-400",
   },
   {
     icon: Palette,
     title: "UI/UX Design",
-    description: "Creating beautiful, intuitive interfaces that users love to interact with",
+    description:
+      "Creating beautiful, intuitive interfaces that users love to interact with",
     gradient: "from-orange-500 to-yellow-400",
   },
 ];
@@ -49,7 +52,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5 }}
@@ -59,12 +62,11 @@ const AboutSection = () => {
             About Me
           </motion.span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-            Crafting Digital{" "}
-            <span className="gradient-text">Experiences</span>
+            Crafting Digital <span className="gradient-text">Experiences</span>
           </h2>
           <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            I blend creativity with technical expertise to build web applications 
-            enhanced with AI that solve real problems
+            I blend creativity with technical expertise to build web
+            applications enhanced with AI that solve real problems
           </p>
         </motion.div>
 
@@ -80,33 +82,40 @@ const AboutSection = () => {
             <div className="glass-card rounded-3xl p-8 relative overflow-hidden group">
               {/* Animated gradient border */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary via-accent to-primary opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
-              
+
               {/* Profile visual */}
               <div className="relative mb-8">
                 <motion.div
                   animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
                   className="absolute -top-4 -right-4 w-24 h-24 rounded-full border border-primary/20"
                 />
+
                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                   <Code2 className="h-10 w-10 text-primary-foreground" />
                 </div>
               </div>
 
               <h3 className="text-2xl font-bold mb-4">
-                Full-Stack Developer & <span className="gradient-text">AI Enthusiast</span>
+                Full-Stack Developer &{" "}
+                <span className="gradient-text">AI Enthusiast</span>
               </h3>
-              
+
               <p className="text-muted-foreground leading-relaxed mb-6">
-                I'm passionate about creating exceptional digital experiences. 
-                My expertise spans from crafting pixel-perfect frontends to 
-                integrating cutting-edge AI solutions that bring applications to life.
+                I'm passionate about creating exceptional digital experiences.
+                My expertise spans from crafting pixel-perfect frontends to
+                integrating cutting-edge AI solutions that bring applications to
+                life.
               </p>
 
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Whether it's building responsive web apps, implementing conversational 
-                AI, or optimizing user experiences — I approach every project with 
-                creativity and attention to detail.
+                Whether it's building responsive web apps, implementing
+                conversational AI, or optimizing user experiences — I approach
+                every project with creativity and attention to detail.
               </p>
 
               {/* Highlights */}
@@ -144,10 +153,12 @@ const AboutSection = () => {
                 className="glass-card rounded-2xl p-6 flex items-start gap-6 group cursor-pointer"
               >
                 {/* Icon with gradient background */}
-                <div className={`shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
+                <div
+                  className={`shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}
+                >
                   <service.icon className="h-7 w-7 text-white" />
                 </div>
-                
+
                 <div className="flex-1">
                   <h4 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                     {service.title}
@@ -158,7 +169,7 @@ const AboutSection = () => {
                 </div>
 
                 {/* Arrow indicator */}
-                <motion.div 
+                <motion.div
                   className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
                   initial={{ x: -10 }}
                   whileHover={{ x: 0 }}

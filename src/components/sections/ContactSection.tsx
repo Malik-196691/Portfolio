@@ -1,6 +1,15 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send, Mail, MapPin, Phone, Github, Linkedin, Twitter, ArrowUpRight } from "lucide-react";
+import {
+  Send,
+  Mail,
+  MapPin,
+  Phone,
+  Github,
+  Linkedin,
+  Twitter,
+  ArrowUpRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -8,9 +17,19 @@ import { useToast } from "@/hooks/use-toast";
 import MagneticButton from "../MagneticButton";
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "hello@alexdev.com", href: "mailto:hello@alexdev.com" },
-  { icon: Phone, label: "Phone", value: "+1 (555) 123-4567", href: "tel:+15551234567" },
-  { icon: MapPin, label: "Location", value: "San Francisco, CA", href: "#" },
+  {
+    icon: Mail,
+    label: "Email",
+    value: "abdullahkatha196@gmail.com",
+    href: "mailto:abdullahkatha196@gmail.com",
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "+92 324 5789291",
+    href: "tel:+923245789291 ",
+  },
+  { icon: MapPin, label: "Location", value: "Pakistan", href: "#" },
 ];
 
 const socialLinks = [
@@ -42,7 +61,9 @@ const ContactSection = () => {
     setFormState({ name: "", email: "", subject: "", message: "" });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormState((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -56,18 +77,21 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-mono text-sm uppercase tracking-wider">Contact</span>
+          <span className="text-primary font-mono text-sm uppercase tracking-wider">
+            Contact
+          </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mt-4">
-            Let's Work{" "}
-            <span className="gradient-text">Together</span>
+            Let's Work <span className="gradient-text">Together</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
-            Have a project in mind? I'd love to hear about it. Drop me a message and let's create something amazing.
+            Have a project in mind? I'd love to hear about it. Drop me a message
+            and let's create something amazing.
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact info */}
+
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -88,7 +112,9 @@ const ContactSection = () => {
                     <item.icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <div className="text-sm text-muted-foreground">{item.label}</div>
+                    <div className="text-sm text-muted-foreground">
+                      {item.label}
+                    </div>
                     <div className="font-medium group-hover:text-primary transition-colors">
                       {item.value}
                     </div>
@@ -128,7 +154,7 @@ const ContactSection = () => {
               className="hidden lg:block font-mono text-sm text-muted-foreground"
             >
               <pre>
-{`// Let's build something
+                {`// Let's build something
 // amazing together
 
 const collaboration = {
@@ -146,7 +172,10 @@ const collaboration = {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <form onSubmit={handleSubmit} className="glass-card p-8 rounded-2xl space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="glass-card p-8 rounded-2xl space-y-6"
+            >
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="relative">
                   <Input

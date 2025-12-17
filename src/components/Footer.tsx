@@ -22,10 +22,10 @@ const Footer = () => {
                 scrollToTop();
               }}
             >
-              {"<Dev />"}
+              {"<Ab Malik />"}
             </motion.a>
             <p className="text-sm text-muted-foreground flex items-center gap-1">
-              Made with <Heart className="h-3 w-3 text-destructive fill-destructive" /> by Alex Johnson
+              Made with <Heart className="h-3 w-3 text-destructive fill-destructive" /> by Ab Malik
             </p>
           </div>
 
