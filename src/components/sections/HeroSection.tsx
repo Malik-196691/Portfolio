@@ -4,6 +4,30 @@ import { Button } from "@/components/ui/button";
 import MagneticButton from "../MagneticButton";
 import HeroBackground from "../HeroBackground";
 
+// Typewriter text component
+const TypewriterText = ({ text, delay = 0 }: { text: string; delay?: number }) => {
+  return (
+    <>
+      {text.split("").map((char, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.05,
+            delay: delay + index * 0.05,
+          }}
+          className="inline-block"
+          style={{ whiteSpace: char === " " ? "pre" : "normal" }}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </>
+  );
+};
+
+
 const HeroSection = () => {
   const scrollToProjects = () => {
     const element = document.querySelector("#projects");
@@ -34,17 +58,23 @@ const HeroSection = () => {
             <span className="text-sm text-muted-foreground">Available for work</span>
           </motion.div>
 
-          {/* Main headline */}
+          {/* Main headline with typewriter effect */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-snug sm:leading-tight mb-6 px-2 sm:px-0"
           >
-            Building{" "}
-            <span className="gradient-text">Digital Experiences</span>
-            <br />
-            That Make an Impact
+            <span className="block sm:inline">
+              <TypewriterText text="Building " delay={0.3} />
+            </span>
+            <span className="gradient-text whitespace-nowrap">
+              <TypewriterText text="Digital Experiences" delay={0.8} />
+            </span>
+            <br className="hidden sm:block" />
+            <span className="block mt-2 sm:mt-0 sm:inline">
+              <TypewriterText text="That Make an Impact" delay={1.8} />
+            </span>
           </motion.h1>
 
           {/* Subtitle */}
